@@ -14,7 +14,7 @@ This template also comes with `CLAUDE.md` and `.cursor/rules` files for easy int
 
 ## Preview
 
-To view a live preview of the site, [click here](https://ryanfitzgerald.github.io/devportfolio/).
+To view a live preview of the site, [click here](https://yunus-topal.github.io/).
 
 ## Built With
 
