@@ -1,0 +1,31 @@
+---
+// src/components/game.astro
+// An Astro component that lists and embeds multiple Unity WebGL games with native lazy-loading.
+const games = [
+  { name: 'Sudoku', url: '/webgl/Sudoku/index.html' },
+  //{ name: 'My Second Unity Game', url: '/webgl/game2/index.html' },
+  // Add more games here:
+  // { name: 'Another Game', url: '/webgl/anotherGame/index.html' },
+];
+---
+
+<section id="games" class="py-8 px-4 md:px-0">
+  <h2 class="text-3xl font-bold mb-6">Games</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    {games.map((game) => (
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4">
+        <h3 class="text-xl font-semibold mb-4">{game.name}</h3>
+        <iframe
+          src={game.url}
+          loading="lazy"
+          width="800"
+          height="600"
+          frameborder="0"
+          allowfullscreen
+          title={game.name}
+          class="w-full aspect-video"
+        ></iframe>
+      </div>
+    ))}
+  </div>
+</section>
