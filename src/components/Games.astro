@@ -2,10 +2,19 @@
 // src/components/game.astro
 // An Astro component that lists and embeds multiple Unity WebGL games with native lazy-loading.
 const games = [
-  { name: 'Sudoku', url: '/webgl/Sudoku/index.html' },
-  //{ name: 'My Second Unity Game', url: '/webgl/game2/index.html' },
-  // Add more games here:
-  // { name: 'Another Game', url: '/webgl/anotherGame/index.html' },
+  {
+    name: 'Sudoku',
+    url: '/webgl/Sudoku/index.html',
+    repo: 'https://github.com/yunus-topal/Sudoku',
+    apk: '/downloads/Sudoku.apk'
+  },
+  // Example for more games:
+  // {
+  //   name: 'My Second Unity Game',
+  //   url: '/webgl/game2/index.html',
+  //   repo: 'https://github.com/yourusername/game2-repo',
+  //   apk: '/downloads/game2.apk'
+  // },
 ];
 ---
 
@@ -37,6 +46,23 @@ const games = [
               title={game.name}
               class="absolute inset-0 w-full h-full"
             ></iframe>
+          </div>
+          <div class="flex gap-4 px-4 py-4">
+            <a
+              href={game.repo}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-block px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition"
+            >
+              GitHub Repo
+            </a>
+            <a
+              href={game.apk}
+              download
+              class="inline-block px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 transition"
+            >
+              Download APK
+            </a>
           </div>
         </div>
       ))}
