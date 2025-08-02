@@ -71,6 +71,8 @@ export const siteConfig = {
       school: "Boğaziçi University",
       degree: "Bachelor of Science in Computer Engineering",
       dateRange: "2022",
+      achievements: [
+      ],
     },
   ],
 };
